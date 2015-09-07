@@ -1,0 +1,17 @@
+web:
+  build: .
+  command: /usr/bin/start_server
+  ports:
+    - "8001"
+    - "3001"
+  links:
+    - db
+db:
+  image: postgres
+  ports:
+    - "5432"
+  # volumes:
+  #   - /etc/postgresql
+  #   - /var/log/postgresql
+  #   - /var/lib/postgresql
+  #   - /var/lib/postgres
